@@ -1,0 +1,24 @@
+// Генерация рандомных данных
+function generateRandomData() {
+  var data = {
+    field1: getRandomValue(),
+    field2: getRandomValue(),
+    field3: getRandomValue(),
+    // Добавьте остальные поля, если необходимо
+  };
+  return data;
+}
+
+// Генерация рандомного значения
+function getRandomValue() {
+  return Math.random().toString(36).substring(7);
+}
+
+// Укажите количество документов, которые вы хотите сгенерировать и вставить
+var numDocuments = 100; // Замените на нужное число документов
+
+// Заполнение коллекции сгенерированными данными
+for (var i = 0; i < numDocuments; i++) {
+  var data = generateRandomData();
+  db.your_collection_name.insert(data);
+}
